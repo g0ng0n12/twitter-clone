@@ -4,12 +4,19 @@ import { formatTweet, formatDate } from "../utils/helpers";
 import { TiArrowBackOutline } from 'react-icons/ti'
 import { TiHeartOutline } from 'react-icons/ti'
 import { TiHeartFullOutline } from 'react-icons/ti'
+import { handleToggleTweet} from "../actions/tweets";
 
 class Tweet extends Component {
 
     handleLike = (e) => {
         e.preventDefault();
         // todo Handle Like Tweet
+        const { dispatch, tweet, authedUser } = this.props
+        dispatch(handleToggleTweet({
+            id: tweet.id,
+            hasLiked: tweet.hasLiked,
+            authedUser
+        }))
     };
 
     toParent = (e, id) => {
@@ -36,7 +43,7 @@ class Tweet extends Component {
                 <img src={avatar} alt={`Avatar of ${name}`} className='avatar' />
                 <div className='tweet-info'>
                     <div>
-                        <span>${name}</span>
+                        <span>{name}</span>
                         <div>{formatDate(timestamp)}</div>
                         {parent && (
                             <button className='replying-to' onClick={(e) => this.toParent(e, parent.id)}>
