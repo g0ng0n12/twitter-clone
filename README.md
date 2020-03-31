@@ -1,11 +1,14 @@
-# Minimalistic Twitter Clone by Udacity
+# Minimalistic Twitter Clone
 
 ##Getting started
 
 ### Prerequisites
     * 1 - nodejs
-    * 2 - 
+    * 2 - npm
     
+
+### Getting Started
+    * 1 - in a terminal window type: `npm run start` to start the webapp 
     
     
 ## Contributing
