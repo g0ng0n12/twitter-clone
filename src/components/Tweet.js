@@ -85,4 +85,4 @@ function mapStateToProps({ authedUser, users, tweets}, { id }){
     }
 }
 
-export default withRouter(onnect(mapStateToProps)(Tweet))
+export default withRouter(connect(mapStateToProps)(Tweet))
